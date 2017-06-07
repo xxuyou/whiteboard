@@ -1,4 +1,4 @@
-[![荆秀实时数据推送服务](https://github.com/xxuyou/yipaibao/blob/master/screenshot/logo-160.png)](http://xxuyou.com)
+[![荆秀实时数据推送服务](http://xxuyou.com/static/screenshot/logo-160.png)](http://xxuyou.com)
 
 # WSS Real-time Data Push Service
 
