@@ -1,3 +1,11 @@
+.gitignore
+
+*.DS_Store
+.idea/*
+.thinkjsrc
+nginx.conf
+pm2.json
+
 # Logs
 logs
 *.log
