@@ -1,5 +1,5 @@
 'use strict';
-let JWT = require('jsonwebtoken'); // @see https://github.com/auth0/node-jsonwebtoken
+const JWT = require('jsonwebtoken'); // @see https://github.com/auth0/node-jsonwebtoken
 export default class extends think.service.base {
   /**
    * init
@@ -27,17 +27,9 @@ export default class extends think.service.base {
     return new Promise(function(resolve, reject) {
       JWT.sign(payload, secretOrPrivateKey, options, function (err, token) {
         if (err) {
-          reject({
-            err: 20000,
-            msg: err.name + ':' + err.message,
-            data: null
-          });
+          reject({err: 9, msg: err.name + ':' + err.message, data: undefined});
         } else {
-          resolve({
-            err: 0,
-            msg: 'ok',
-            data: token
-          });
+          resolve({err: 0, msg: 'ok', data: token});
         };
       });
     });
@@ -61,17 +53,9 @@ export default class extends think.service.base {
     return new Promise(function(resolve, reject) {
       JWT.verify(token, secretOrPublicKey, options, function (err, decoded) {
         if (err) {
-          reject({
-            err: 20000,
-            msg: err.name + ':' + err.message,
-            data: null
-          });
+          reject({err: 9, msg: err.name + ':' + err.message, data: undefined});
         } else {
-          resolve({
-            err: 0,
-            msg: 'ok',
-            data: decoded
-          });
+          resolve({err: 0, msg: 'ok', data: decoded});
         };
       });
     });

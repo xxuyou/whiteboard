@@ -1,7 +1,9 @@
 {
-  "name": "thinkjs-application",
-  "description": "application created by thinkjs",
+  "name": "whiteboard",
+  "description": "demo application for WSS",
+  "author": "Xuejun Guan <guanxuejun@gmail.com> (http://guanxuejun.com)",
   "version": "1.0.0",
+  "homepage": "xxuyou.com",
   "scripts": {
     "start": "node www/development.js",
     "compile": "babel src/ --out-dir app/",
