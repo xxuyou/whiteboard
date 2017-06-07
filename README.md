@@ -4,7 +4,7 @@
 
 ## DEMO 在线教学白板
 
-[![Gitter](https://img.shields.io/badge/Powered%20by-WSS%20Realtime Data Push-brightgreen.svg)](http://xxuyou.com)
+[![Gitter](https://img.shields.io/badge/Powered%20by-WSS%20Realtime%20Data%20Push-brightgreen.svg)](http://xxuyou.com)
 
 简介、截图
 
