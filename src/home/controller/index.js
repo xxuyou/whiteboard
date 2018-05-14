@@ -19,7 +19,6 @@ export default class extends Base {
       let uid = this.post('uid');
       let txt = this.post('txt');
       let url = api + '/' + [auth, app, key].join('/');
-      console.log('url', url);
       const request = require('superagent');
       let doSend = () => {
         let deferred = think.defer();
