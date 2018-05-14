@@ -12,7 +12,7 @@
   <script src="http://cdn.bootcss.com/socket.io/1.7.3/socket.io.min.js"></script>
   <script src="http://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/static/js/wss.js?version=3.2.1"></script>
+  <script src="https://xxuyou.com/static/js/wss.class.js?version=3.5.0"></script>
   <script>
     $(function () {
       /**
@@ -69,11 +69,28 @@
         // 可以建立多个监听事件
         _wss.on('myTestPoolNew1:append', function (res) {
           console.log('[CLIENT][INFO] 继续监听事件 receive [myTestPoolNew1:append]:', res);
+          $('#recerive').append('<pre>'+res[0]+'</pre>');
         });
       } else {
         throw new Error("[CLIENT][ERR]错误：连接 WSS 服务器失败！请刷新页面重新尝试！");
       };
+      $('#testForm').on('submit', function () {
+        let key = 'myTestPoolNew1';
+        let uid = $('#testUid').val();
+        let txt = $('#testText').val();
+        if (/^\d+$/.test(uid) == false) {
+          alert('无法获取 UID');
+          return false;
+        };
+        let url = '/';
+        let data = {"key": key, "uid": uid, "txt": txt};
+        $.post(url, data, handlePost, 'json');
+        return false;
+      });
     });
+    function handlePost(res) {
+      console.log(res);
+    }
   </script>
 </head>
 <body>
@@ -90,6 +107,23 @@
   <section class="content">
     <div class="col-xs-12" id="result"></div>
   </section>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div id="recerive"></div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form id="testForm">
+        <div class="form-group">
+          <label for="testText">输入</label>
+          <input type="text" class="form-control" id="testText" placeholder="" />
+          <input type="hidden" id="testUid" value="<%- uid %>" />
+        </div>
+        <button type="submit" class="btn btn-default">发送</button>
+      </form>
+    </div>
+  </div>
 </div>
 </body>
 </html>
